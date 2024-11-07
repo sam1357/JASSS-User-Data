@@ -1,0 +1,43 @@
+{
+  "name": "jasss-user-data",
+  "version": "1.0.0",
+  "description": "This microservice reads from and writes to a user data DynamoDB table",
+  "main": "index.ts",
+  "scripts": {
+    "lint": "pnpm exec eslint src/*.ts src/**/*.ts",
+    "lint-fix": "pnpm exec eslint src/*.ts src/**/*.ts --fix",
+    "prettier": "pnpm exec prettier -c src",
+    "prettier-fix": "pnpm exec prettier -w src",
+    "build": "rimraf dist && esbuild ./src/ --bundle --minify --platform=node --outfile=dist/index.js"
+  },
+  "author": "JASSS",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.136",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.22",
+    "@types/nodemailer": "^6.4.14",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "esbuild": "^0.20.1",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@aws-lambda-powertools/logger": "^1.18.1",
+    "@aws-sdk/client-dynamodb": "^3.535.0",
+    "@aws-sdk/client-lambda": "^3.535.0",
+    "@aws-sdk/client-s3": "^3.525.0",
+    "@aws-sdk/credential-providers": "^3.540.0",
+    "@aws-sdk/lib-dynamodb": "^3.535.0",
+    "@aws-sdk/util-dynamodb": "^3.535.0",
+    "aws-lambda": "^1.0.7",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "email-validator": "^2.0.4",
+    "nodemailer": "^6.9.13"
+  }
+}
